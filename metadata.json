@@ -1,0 +1,7 @@
+{
+  "name": "Taxi Watch",
+  "description": "Anonymously report reckless minibus taxi drivers. Your report helps create a safer road environment for everyone. Describe the incident, and our AI will summarize and categorize it.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}

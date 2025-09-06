@@ -1,0 +1,26 @@
+{
+  "short_name": "Taxi Watch",
+  "name": "Taxi Watch",
+  "description": "Anonymously report reckless minibus taxi drivers. Your report helps create a safer road environment for everyone. Describe the incident, and our AI will summarize and categorize it.",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#000000"
+}
