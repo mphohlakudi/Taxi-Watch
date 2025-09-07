@@ -11,11 +11,22 @@ export const redactPII = async (data: { description: string; location: string })
   const model = 'gemini-2.5-flash';
 
   const prompt = `
-    Analyze the following text for Personally Identifiable Information (PII).
-    PII includes but is not limited to: names of people, specific street addresses, apartment numbers, phone numbers, email addresses, and any other details that could uniquely identify a person or their private location.
-    Your task is to replace any found PII with a generic placeholder like '[REDACTED]'.
-    Do not summarize the text. Preserve the original meaning and structure as much as possible. If no PII is found, return the original text.
+    You are a highly advanced PII (Personally Identifiable Information) detection and redaction system.
+    Your task is to analyze the provided 'Description' and 'Location' text and replace any found PII with the placeholder '[REDACTED]'.
+    Preserve the original meaning, context, and structure of the text as much as possible. If no PII is found, return the original text unchanged.
 
+    Redact the following types of PII:
+    - Names of people (e.g., "John Doe", "Mrs. Zuma").
+    - Phone numbers (including South African formats like 082 123 4567, +27 82 123 4567).
+    - Email addresses.
+    - Social media handles (e.g., @username).
+    - Specific street addresses (e.g., "123 Main Road, Cape Town").
+    - Apartment or unit numbers.
+    - South African ID numbers.
+    - Vehicle license plate numbers mentioned within the text (e.g., "the taxi with plate CA 123-456").
+    - Any other information that could uniquely identify an individual or their private residence.
+
+    Input Text:
     Description: "${data.description}"
     Location: "${data.location}"
   `;
